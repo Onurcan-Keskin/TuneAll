@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "561469815451",
+    "firebase_url": "https://looneytune-a73ac.firebaseio.com",
+    "project_id": "looneytune-a73ac",
+    "storage_bucket": "looneytune-a73ac.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:561469815451:android:6ce0efb3b4b86732f6643e",
+        "android_client_info": {
+          "package_name": "com.onurcankeskin.looneytune"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "561469815451-dqjt3im4n88po5rg7mirioh61gs07q49.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.onurcankeskin.looneytune",
+            "certificate_hash": "9a64bfe2123f17d9e2cf4ef9cc4322c985d46a45"
+          }
+        },
+        {
+          "client_id": "561469815451-5a3s08pu29vhp0e8a3cb4qtobel9marf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDaVXLJjct93z9P_PRLYkHp2Ram4Stj8_Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "561469815451-5a3s08pu29vhp0e8a3cb4qtobel9marf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

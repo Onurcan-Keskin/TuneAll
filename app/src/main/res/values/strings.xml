@@ -1,0 +1,302 @@
+<resources>
+    <string name="app_name">Tune All</string>
+    <string name="tunings_json" translatable="false">{\"tunings\":[
+    {\"groupName\":\"Chromatic\",\"groupTunings\":[
+      {\"tuningName\":\"Automatic\"}
+      ]
+    },
+    {\"groupName\":\"Guitar\",\"groupTunings\":[
+      {\"tuningName\":\"Standard\",\"tuningNotes\":\"E2 A2 D3 G3 B3 E4\"},
+      {\"tuningName\":\"Half-Step Down\",\"tuningNotes\":\"D#2 G#2 C#3 F#3 A#3 D#4\"},
+      {\"tuningName\":\"Drop D\",\"tuningNotes\":\"D2 A2 D3 G3 B3 E4\"},
+      {\"tuningName\":\"Drop C\",\"tuningNotes\":\"C2 G2 C3 F3 A3 D4\"},
+      {\"tuningName\":\"Open D\",\"tuningNotes\":\"D2 A2 D3 F#3 A3 D4\"},
+      {\"tuningName\":\"Open G\",\"tuningNotes\":\"D2 G2 D3 G3 B3 D4\"},
+      {\"tuningName\":\"Open A\",\"tuningNotes\":\"E2 A2 E3 A3 C#4 E4\"},
+      {\"tuningName\":\"Lute\",\"tuningNotes\":\"E2 A2 D3 F#3 B3 E4\"},
+      {\"tuningName\":\"Irish\",\"tuningNotes\":\"D2 A2 D3 G3 A3 D4\"}
+      ]
+    },
+    {\"groupName\":\"Bass\",\"groupTunings\":[
+      {\"tuningName\":\"Standard\",\"tuningNotes\":\"E1 A1 D2 G2\"},
+      {\"tuningName\":\"Open D\",\"tuningNotes\":\"D1 A1 D2 G2\"},
+      {\"tuningName\":\"Drop D\",\"tuningNotes\":\"D1 G1 C2 F2\"}
+      ]
+      },
+      {\"groupName\":\"Fiddle\",\"groupTunings\":[
+      {\"tuningName\":\"Violin\",\"tuningNotes\":\"G3 D4 A4 E5\"},
+      {\"tuningName\":\"Viola\",\"tuningNotes\":\"C3 G3 D4 A4\"},
+      {\"tuningName\":\"Cello\",\"tuningNotes\":\"C2 G2 D3 A3\"}
+      ]
+      }
+  ]
+}</string>
+
+
+    <!-- Prefs -->
+    <string name="pref_accidentals_title">Accidentals ( # or b )</string>
+    <string name="pref_accidentals_summary">Choose whether to use sharp or flat notation.</string>
+    <string name="pref_accidentals_default">sharp</string>
+
+    <string name="pref_naming_title">Note naming convention</string>
+    <string name="pref_naming_summary">Choose which note naming convention to use.</string>
+    <string name="pref_naming_default">english</string>
+
+    <string name="pref_calibration_title">Calibrate tuner</string>
+    <string name="pref_calibration_summary">Adjust to calibrate the base frequency of the tuner</string>
+
+    <string name="pref_calibration_label_format">%d Hz</string>
+
+    <string name="pref_sfx_title">Sound effects</string>
+    <string name="pref_sfx_summary">Enable or disable correct tune and app start sounds</string>
+
+    <string name="pref_suppressor_title">Noise cancellation</string>
+    <string name="pref_suppressor_summary">Enable or disable noise cancellation for loud environments</string>
+
+    <string name="pref_input_category">Input</string>
+
+    <string name="pref_input">Input source</string>
+    <string name="pref_input_summ">%s</string>
+
+    <string name="pref_filter">Audio filter</string>
+    <string name="pref_filter_summ">Filter input audio</string>
+
+    <string name="pref_solfa">Solfège</string>
+    <string name="pref_solfa_summ">Use solfège (DoReMi)</string>
+
+    <string name="pref_down">Downsample</string>
+    <string name="pref_down_summ">Downsample input before analysis</string>
+
+    <string name="tuner_mode_default">Guitar,Standard,E2 A2 D3 G3 B3 E4</string>
+
+    <string name="pref_display">Display</string>
+
+    <string name="pref_screen">Screen</string>
+    <string name="pref_screen_summ">Keep screen on</string>
+
+    <string name="pref_zoom">Zoom spectrum</string>
+    <string name="pref_zoom_summ">Zoom in to current note on spectrum display</string>
+
+
+    <string name="pref_mult">Multiple notes</string>
+    <string name="pref_mult_summ">Show multiple notes on display</string>
+
+    <string name="pref_fund">Fundamental filter</string>
+    <string name="pref_fund_summ">Use fundamental filter</string>
+
+    <string name="pref_filters">Note filters</string>
+    <string name="pref_filters_summ">Use note filters</string>
+
+    <string name="pref_note_filter">Note filter</string>
+    <string name="pref_note_filter_summ">Note filter settings</string>
+
+    <string name="pref_octave_filter">Octave filter</string>
+    <string name="pref_octave_filter_summ">Octave filter settings</string>
+
+    <string name="pref_strobe">Strobe</string>
+    <string name="pref_strobe_screen">Strobe settings</string>
+    <string name="pref_strobe_summ">Show the strobe display</string>
+
+    <string name="pref_colour">Strobe colours</string>
+    <string name="pref_colour_summ">Change the strobe colours</string>
+
+    <string name="pref_custom">Custom</string>
+    <string name="pref_custom_summ">Custom colours</string>
+
+    <string name="pref_refer">Reference</string>
+    <string name="pref_refer_summ">%dHz</string>
+
+    <string name="pref_transpose">Transpose</string>
+    <string name="pref_transpose_summ">%s</string>
+
+    <string name="pref_temper">Temperament</string>
+    <string name="pref_temper_summ">%s</string>
+
+    <string name="pref_key">Key</string>
+    <string name="pref_key_summ">%s</string>
+
+    <string name="pref_theme">Theme</string>
+    <string name="pref_dark">Dark Theme</string>
+    <string name="pref_dark_summ">Use dark theme</string>
+
+    <!-- Busy Microphone Dialog strings -->
+    <string name="busy_microphone_dialog_title">No Microphone Access</string>
+    <string name="busy_microphone_dialog_text">Looks like Tuner can\'t access your microphone. Check if another app is using it, close it then tap \'Try again\'.</string>
+    <string name="busy_microphone_dialog_button_text">Try Again</string>
+
+    <string name="button_variant_white">btn_white</string>
+    <string name="button_variant_accent">btn_accent</string>
+    <string name="button_variant_danger">btn_danger</string>
+    <string name="button_variant_fade">btn_fade</string>
+
+    <!-- Intro Screen -->
+    <string name="intro_title">Welcome!</string>
+    <string name="intro_text">Thanks for using TuneIn! To get started, please grant permission for Microphone Access.</string>
+    <string name="intro_permission_button_text">Grant Microphone Access</string>
+    <string name="intro_permission_denied_msg">"Microphone permissions are needed for the application to work."</string>
+    <string name="language_options">Language Options</string>
+
+    <!-- Action -->
+    <string name="login">Login</string>
+    <string name="action_create_a_new">Create A New Account</string>
+    <string name="action_sign_in_with_email">SignIn with Email &amp; Password</string>
+    <string name="action_login_to_your">Login To Your Account</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign In</string>
+    <string name="action_sign_up_short">Sign Up</string>
+    <string name="action_sign_up_dialog">Please wait while we create your account.</string>
+    <string name="action_tap_on_cam">Tap on Avatar to choose your profile picture.</string>
+    <string name="action_save">Save</string>
+    <string name="action_save_in_progress">Save in progress.</string>
+    <string name="action_profile_update">Profile Updated</string>
+    <string name="action_verify">Verify your Email</string>
+    <string name="action_no">No</string>
+    <string name="action_available">Available</string>
+    <string name="action_not_available">Not Available</string>
+    <string name="action_taken">Taken</string>
+    <string name="action_not_taken">Not Taken</string>
+    <string name="action_save_continue">Save &amp; Continue</string>
+    <string name="action_exit">Exit</string>
+    <string name="action_save_finish">Save &amp; Finish</string>
+    <string name="action_user_name">TuneIn User</string>
+    <string name="action_dark_mode">Night Mode</string>
+
+    <string name="action_yes">Yes</string>
+    <string name="action_cancel">Cancel</string>
+
+    <string name="name">Name</string>
+    <string name="status">Status</string>
+    <string name="mail">Mail Address</string>
+    <string name="default_status">Available</string>
+    <string name="account_settings">Account Settings</string>
+
+    <string name="main_menu">Main Menu</string>
+
+    <!-- Photo Keys -->
+    <string name="choose_gallery">Gallery</string>
+    <string name="add_image">Add Image</string>
+    <string name="select_image">SELECT IMAGE</string>
+    <string name="add_mypet">Add My Pet</string>
+    <string name="title_activity_display_image">Display Image</string>
+    <string name="image_information">Image Information</string>
+    <string name="choose_camera">Photo</string>
+    <string name="title_activity_login">Sign in</string>
+
+    <!-- Prompts -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="prompt_enter_name">Enter your name</string>
+    <string name="prompt_verify_sent">Verification Send.</string>
+    <string name="prompt_enter_about">Enter about</string>
+    <string name="prompt_save_success">Save Successful</string>
+    <string name="prompt_uploading_image">Uploading Image…</string>
+    <string name="prompt_uploading_image_message">Please wait while the image uploads.</string>
+    <string name="prompt_uploading_property">Uploading Property…</string>
+    <string name="prompt_uploading_property_message">Please wait while the property uploads.</string>
+    <string name="prompt_property_from_on">This property will be on:</string>
+    <string name="prompt_upload_comp">Upload Completed.</string>
+    <string name="prompt_property_from">Property from</string>
+    <string name="prompt_not_applicable">Not Applicable</string>
+    <string name="prompt_loading_property">Loading the Property Lists…</string>
+    <string name="prompt_sign_out_quest">Do you want to Sign Out?</string>
+    <string name="prompt_exit_quest">Are you certain that you want to Exit?</string>
+    <string name="prompt_exit_quest_mes">If you exit now All your entered registries will be lost!</string>
+    <string name="prompt_uploading_image_property_message">Please wait while image of your property uploads.</string>
+    <string name="prompt_is_saved_successfully">is saved successfully.</string>
+    <string name="prompt_dark_mode">Enable Dark Mode</string>
+
+    <!-- Errors -->
+    <string name="error_lang_selected">Language is already selected</string>
+    <string name="error_buffer">Error from audio recording! Cannot find a working input sample rate.</string>
+    <string name="error_init">
+    Audio recorder not initialised! Maybe the selected input source is
+    not available, or a working input sample rate could not be found.
+  </string>
+    <string name="error_no_image">No image selected</string>
+    <string name="error_verification">Email Not Verified (Click to Verify)</string>
+    <string name="error_invalid_email_address">Email address is invalid</string>
+    <string name="error_invalid_password_max">Password length must be at maximum 12.</string>
+    <string name="error_invalid_password_min">Password length must be at least 6.</string>
+    <string name="error_incorrect_password">Password is incorrect.</string>
+    <string name="error_field_required">This field is required.</string>
+    <string name="error_mail_required">Email field is required</string>
+    <string name="error_pass_required">Password field is required.</string>
+    <string name="error_already_registered">You are already registered.</string>
+    <string name="error_back_button">Back Button is disabled. Please finish registering the Property or if you want to exit please follow the Guidelines.</string>
+    <string name="error_back_btn_guid">Back Button is disabled. Please follow the Guidelines.</string>
+    <string name="error_global_login">There is no such user or password or email address is wrong.</string>
+    <string name="error_save">Error occurred while saving changes. Please try again.</string>
+    <string name="error_no_selection_to_save">Please select a field in order to Save.</string>
+    <string name="error_no_additon_to_save">Please fill the required empty fields in order to Save</string>
+    <string name="error_maximum_11">Maximum 11 images can be accepted!</string>
+    <string name="error_no_account">No account found on our databases. Please select a login method to reach to full extend of our application.</string>
+    <string name="error_not_spec">Not Specified</string>
+
+    <string name="error_GsignIn">Google Sign In failed</string>
+    <string name="error_FsignIn">Facebook Sign In failed</string>
+    <string name="error_MsignIn">Microsoft Sign In failed</string>
+
+    <!-- Things -->
+    <string name="filter_on">Audio filter on</string>
+    <string name="filter_off">Audio filter off</string>
+
+    <string name="fund_on">Fundamental filter on</string>
+    <string name="fund_off">Fundamental filter off</string>
+
+    <string name="zoom_on">Spectrum zoom on</string>
+    <string name="zoom_off">Spectrum zoom off</string>
+
+    <string name="lock_on">Display lock on</string>
+    <string name="lock_off">Display lock off</string>
+
+    <string name="screen_on">Keep screen on</string>
+    <string name="screen_off">Don\'t keep screen on</string>
+
+    <string name="strobe_on">Strobe on</string>
+    <string name="strobe_off">Strobe off</string>
+
+    <string name="down_on">Downsampling on</string>
+    <string name="down_off">Downsampling off</string>
+
+    <string name="mult_on">Multiple notes on</string>
+    <string name="mult_off">Multiple notes off</string>
+
+    <string name="dark_theme">Dark theme</string>
+    <string name="light_theme">Light theme</string>
+
+    <string name="copied_clip">Data copied to clipboard</string>
+    <string name="sample_rate">Sample rate: %d</string>
+
+    <string name="filter">filter</string>
+    <string name="fund">fund</string>
+    <string name="note">note</string>
+    <string name="zoom">zoom</string>
+    <string name="lock">lock</string>
+    <string name="display">screen</string>
+    <string name="strobe">strobe</string>
+    <string name="down">down</string>
+    <string name="mult">mult</string>
+
+    <string name="def_custom">[-1073807360,-1090518785]</string>
+    <string name="appwidget_text">EXAMPLE</string>
+    <string name="configure">Configure</string>
+    <string name="add_widget">Add widget</string>
+    <string name="sharp_by">sharp by</string>
+    <string name="flat_by">flat by</string>
+    <string name="intune">in tune.</string>
+    <string name="tuner">Tuner</string>
+    <string name="error_auth_failed">Authentication Failed</string>
+    <string name="logout">Logut</string>
+    <string name="linking_google">Linking Google Account</string>
+    <string name="prompt_linking_google">Please wait while process is being completed…</string>
+    <string name="prompt_logout_quest">Do you want to Logout?</string>
+    <string name="about">About</string>
+    <string name="membership">Membership Status</string>
+    <string name="mdefault">Default</string>
+    <string name="application_options">Application Options</string>
+    <string name="english">English</string>
+    <string name="sign_in_method">Sign In Method</string>
+    <string name="error_empty_field">Please fill the neccessary parts in order to Save.</string>
+    <string name="error_uploading">Error uploading image.</string>
+
+</resources>

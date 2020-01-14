@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <import type="android.view.Gravity" />
+
+        <variable
+            name="result"
+            type="com.onurcankeskin.looneytune.TunerResult" />
+
+        <variable
+            name="tuner"
+            type="com.onurcankeskin.looneytune.Tuner" />
+
+        <variable
+            name="currentNotePlaying"
+            type="androidx.databinding.ObservableField&lt;String&gt;" />
+    </data>
+
+    <androidx.drawerlayout.widget.DrawerLayout
+        android:id="@+id/drawer_tuner"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/const_screen"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageButton
+                android:id="@+id/drawermenu_tuner"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="16dp"
+                android:background="@drawable/round_selector"
+                android:clickable="true"
+                android:focusable="true"
+                android:tint="@color/white"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_menu_white_24dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:scaleType="fitCenter"
+                android:text="@string/app_name"
+                android:layout_marginTop="5dp"
+                style="@style/AppTheme.Intro.Title"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/app_logo"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="@dimen/tuner_margin_top"
+                android:src="@mipmap/icon"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageButton
+                android:id="@+id/img_screen_on_off"
+                android:layout_width="32dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="@dimen/tuner_margin_top"
+                android:background="@drawable/round_selector"
+                android:scaleType="fitCenter"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_action_brightness_high_dark" />
+
+            <ImageButton
+                android:id="@+id/menuButton"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="@dimen/tuner_margin_top"
+                android:layout_marginEnd="4dp"
+                android:background="@drawable/round_selector"
+                android:tint="@android:color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_menu" />
+
+            <TextView
+                android:id="@+id/tunerStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="54dp"
+                android:gravity="center"
+                android:text="@{result.statusText}"
+                android:textColor="@color/colorWhite"
+                android:textSize="16sp"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@id/app_logo"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                app:layout_constraintBottom_toBottomOf="@+id/tunerLine"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tunerLine"
+                app:srcCompat="@drawable/indicator_middle" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="64dp"
+                android:scaleType="fitCenter"
+                android:tint="@color/colorTextSecondary"
+                app:layout_constraintBottom_toTopOf="@+id/tunerListeningBlock"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:srcCompat="@drawable/ic_sharp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="64dp"
+                android:scaleType="fitCenter"
+                android:tint="@color/colorTextSecondary"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tunerListeningBlock"
+                app:srcCompat="@drawable/ic_flat" />
+
+            <com.onurcankeskin.looneytune.TunerModeListeningBlock
+                android:id="@+id/tunerListeningBlock"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                android:background="@android:color/transparent"
+                android:gravity="center"
+                app:isTunerResultVisible="@{result.isEmpty() &amp;&amp; currentNotePlaying.equals(``)}"
+                app:layout_constraintBottom_toBottomOf="@+id/tunerLine"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tunerLine" />
+
+            <com.onurcankeskin.looneytune.TunerModePlayingBlock
+                android:id="@+id/tunerPlayingBlock"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:gravity="center"
+                app:currentNotePlaying="@{currentNotePlaying}"
+                app:isTunerResultVisible="@{result.isEmpty() &amp;&amp; !currentNotePlaying.equals(``)}"
+                app:layout_constraintBottom_toBottomOf="@+id/tunerLine"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tunerLine" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/tunerBlockSpecificDetails"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginBottom="0dp"
+                android:layout_weight="0"
+                android:gravity="center_vertical"
+                android:visibility="@{tuner.tunerMode.isChromatic() ? View.VISIBLE : View.GONE}"
+                app:layout_constraintBottom_toTopOf="@+id/navigation_block_pick">
+
+                <TextView
+                    android:id="@+id/txt_note"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="40dp"
+                    android:text="@{result.getNoteLabelWithAug() + String.valueOf(result.getOctaveLabel())}"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:scaleType="fitCenter"
+                    android:tint="@color/colorAccent"
+                    android:visibility="@{result.isCorrect() ? View.VISIBLE : View.INVISIBLE}"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_check_circle" />
+
+                <ImageView
+                    android:layout_width="8dp"
+                    android:layout_height="8dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="8dp"
+                    android:alpha="@{result.getPercentageLabel() &gt; 0 ? 1f : .3f}"
+                    android:scaleType="fitCenter"
+                    android:tint="@color/colorWhite"
+                    android:visibility="@{(result.isValid() &amp;&amp; !tuner.hasCorrectResult) ? View.VISIBLE : View.INVISIBLE}"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/navigationBlockPercentageTextView"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_arrow_up" />
+
+                <ImageView
+                    android:layout_width="8dp"
+                    android:layout_height="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="10dp"
+                    android:alpha="@{result.getPercentageLabel() &lt; 0 ? 1f : .3f}"
+                    android:scaleType="fitCenter"
+                    android:tint="@color/colorWhite"
+                    android:visibility="@{(result.isValid() &amp;&amp; !tuner.hasCorrectResult) ? View.VISIBLE : View.INVISIBLE}"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/navigationBlockPercentageTextView"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_arrow_down" />
+
+                <TextView
+                    android:id="@+id/navigationBlockPercentageTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:alpha=".3"
+                    android:text="@{String.valueOf(Math.abs(result.getPercentageLabel()))}"
+                    android:textSize="16dp"
+                    android:visibility="@{(result.isValid() &amp;&amp; !tuner.hasCorrectResult) ? View.VISIBLE : View.INVISIBLE}"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/frequency_hertz"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="40dp"
+                    android:gravity="end"
+                    android:text="@{String.valueOf(result.getFrequencyLabel())}"
+                    android:textSize="16dp"
+                    android:visibility="@{result.isValid() ? View.VISIBLE : View.INVISIBLE}"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <com.onurcankeskin.looneytune.TunerNotesCollectionBlock
+                android:id="@+id/notesCollectionBlock"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/collection_block_bg"
+                android:gravity="center"
+                android:paddingLeft="3dp"
+                android:paddingTop="5dp"
+                android:paddingRight="3dp"
+                android:paddingBottom="5dp"
+                android:visibility="@{!tuner.tunerMode.isChromatic() ? View.VISIBLE : View.GONE}"
+                app:currentNote="@{result.getNoteLabelWithAugAndOctave()}"
+                app:currentNotePlaying="@{currentNotePlaying}"
+                app:layout_constraintBottom_toTopOf="@+id/navigation_block_pick"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:notes="@{tuner.tunerMode.getNotesObjectsForGroup()}" />
+
+            <com.onurcankeskin.looneytune.TunerNavigationBlock
+                android:id="@+id/navigation_block_pick"
+                android:layout_width="0dp"
+                android:layout_height="56dp"
+                android:layout_marginStart="12dp"
+                android:layout_marginEnd="12dp"
+                android:layout_marginBottom="12dp"
+                android:background="@drawable/navigation_block_bg"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:nbGroupText="@{tuner.tunerMode.group}"
+                app:nbImage="@{@drawable/ic_mode_pick_active}"
+                app:nbText="@{tuner.tunerMode.getNameLabel()}">
+
+            </com.onurcankeskin.looneytune.TunerNavigationBlock>
+
+            <RelativeLayout
+                android:id="@+id/tunerMainTextWrapper"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_marginTop="64dp"
+                android:layout_marginBottom="60dp"
+                app:layout_constraintBottom_toTopOf="@+id/navigation_block_pick"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/tvNote"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:text="@{result.getNoteLabel()}"
+                    android:textColor="@color/colorTextSecondary"
+                    android:textSize="128dp"
+                    app:isTunerResultVisible="@{!result.isEmpty() &amp;&amp; currentNotePlaying.equals(``)}" />
+
+                <TextView
+                    android:id="@+id/tvNoteSharp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@id/tvOctave"
+                    android:layout_toRightOf="@id/tvNote"
+                    android:background="@android:color/transparent"
+                    android:text="@{result.getNoteAug()}"
+                    android:textColor="@color/colorTextSecondary"
+                    android:textSize="36dp"
+                    app:isTunerResultVisible="@{!result.isEmpty() &amp;&amp; currentNotePlaying.equals(``)}" />
+
+                <TextView
+                    android:id="@+id/tvOctave"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@id/tvNote"
+                    android:layout_marginRight="15dp"
+                    android:layout_toRightOf="@id/tvNote"
+                    android:background="@android:color/transparent"
+                    android:text="@{result.getOctaveLabel()}"
+                    android:textColor="@color/colorTextSecondary"
+                    android:textSize="48dp"
+                    app:isTunerResultVisible="@{!result.isEmpty() &amp;&amp; currentNotePlaying.equals(``)}" />
+            </RelativeLayout>
+
+            <com.onurcankeskin.looneytune.TunerView
+                android:id="@+id/tunerLine"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="90dp"
+                android:layout_marginBottom="60dp"
+                android:background="@android:color/transparent"
+                app:indicatorType="@{result.getType()}"
+                app:indicatorY="@{result.getPercentage()}"
+                app:layout_constraintBottom_toTopOf="@+id/navigation_block_pick"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <include layout="@layout/navigation_view" android:id="@+id/nav_view_tuner"/>
+
+    </androidx.drawerlayout.widget.DrawerLayout>
+
+</layout>

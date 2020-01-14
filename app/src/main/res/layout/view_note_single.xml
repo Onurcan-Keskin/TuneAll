@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <import type="androidx.databinding.ObservableField" />
+
+        <variable
+            name="result"
+            type="String" />
+
+        <variable
+            name="noteCurrent"
+            type="com.onurcankeskin.looneytune.Note" />
+
+        <variable
+            name="notePlayingAudio"
+            type="ObservableField&lt;String&gt;" />
+
+        <variable
+            name="isInTune"
+            type="androidx.databinding.ObservableBoolean" />
+    </data>
+
+    <LinearLayout
+        android:id="@+id/viewRoot"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_gravity="center"
+        android:layout_marginLeft="6dp"
+        android:layout_marginRight="6dp"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="@{notePlayingAudio.get().equals(noteCurrent.toString()) ? View.VISIBLE : View.GONE}">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_note_circle_playing_bg"
+                android:tint="@color/colorAccent" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@{noteCurrent.getTranslatedNote()}"
+                android:textColor="@color/colorAccentDark"
+                android:textSize="16dp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="@{(!isInTune &amp;&amp; !result.equals(noteCurrent.toString()) &amp;&amp; !notePlayingAudio.equals(noteCurrent.toString())) ? View.VISIBLE : View.GONE}">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:alpha=".15"
+                android:src="@drawable/ic_note_circle_bg"
+                android:tint="@color/colorPrimary" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_weight="1"
+                android:alpha="0.3"
+                android:gravity="center"
+                android:text="@{noteCurrent.getTranslatedNote()}"
+                android:textColor="@color/colorWhite"
+                android:textSize="16dp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="@{!isInTune &amp;&amp; result.equals(noteCurrent.toString()) &amp;&amp; !notePlayingAudio.equals(noteCurrent.toString()) ? View.VISIBLE : View.GONE}">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_note_circle_bg"
+                android:tint="@color/colorWhite" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@{noteCurrent.getTranslatedNote()}"
+                android:textColor="@color/colorWhite"
+                android:textSize="16dp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="@{isInTune &amp;&amp; !result.equals(noteCurrent.toString()) &amp;&amp; !notePlayingAudio.equals(noteCurrent.toString()) ? View.VISIBLE : View.GONE}">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:alpha="0.25"
+                android:src="@drawable/ic_note_circle_bg"
+                android:tint="@color/colorAccent" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_weight="1"
+                android:alpha="1"
+                android:gravity="center"
+                android:text="@{noteCurrent.getTranslatedNote()}"
+                android:textColor="@color/colorAccent"
+                android:textSize="16dp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="@{isInTune &amp;&amp; result.equals(noteCurrent.toString()) &amp;&amp; !notePlayingAudio.equals(noteCurrent.toString()) ? View.VISIBLE : View.GONE}">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_note_circle_bg"
+                android:tint="@color/colorAccent" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@{noteCurrent.getTranslatedNote()}"
+                android:textColor="@color/colorAccent"
+                android:textSize="16dp" />
+        </RelativeLayout>
+
+    </LinearLayout>
+</layout>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.onurcankeskin.looneytune.TuneInSettings.PreferenceChoice
+        android:defaultValue="@string/pref_accidentals_default"
+        android:key="tuner_accidentals"
+        app:entries="@array/accidentals_entries_array"
+        app:entryValues="@array/accidentals_values_array"
+        app:summary="@string/pref_accidentals_summary"
+        app:title="@string/pref_accidentals_title" />
+
+    <com.onurcankeskin.looneytune.TuneInSettings.PreferenceChoice
+        android:defaultValue="@string/pref_naming_default"
+        android:key="tuner_naming"
+        app:entries="@array/naming_entries_array"
+        app:entryValues="@array/naming_values_array"
+        app:summary="@string/pref_naming_summary"
+        app:title="@string/pref_naming_title" />
+
+    <com.onurcankeskin.looneytune.TuneInSettings.PreferenceNumber
+        android:defaultValue="@integer/pref_calibration_default"
+        android:key="tuner_calibration"
+        app:labelFormat="@string/pref_calibration_label_format"
+        app:numberMax="@integer/pref_calibration_max"
+        app:numberMin="@integer/pref_calibration_min"
+        app:numberStep="@integer/pref_calibration_step"
+        app:summary="@string/pref_calibration_summary"
+        app:title="@string/pref_calibration_title" />
+
+    <com.onurcankeskin.looneytune.TuneInSettings.PreferenceSwitch
+        android:defaultValue="@bool/pref_sfx_default"
+        android:key="tuner_sfx"
+        app:summary="@string/pref_sfx_summary"
+        app:title="@string/pref_sfx_title" />
+
+    <com.onurcankeskin.looneytune.TuneInSettings.PreferenceSwitch
+        android:defaultValue="@bool/pref_suppressor_default"
+        android:key="tuner_suppressor"
+        app:summary="@string/pref_suppressor_summary"
+        app:title="@string/pref_suppressor_title" />
+
+    <com.onurcankeskin.looneytune.TuneInSettings.PreferenceReset android:key="tuner_reset" />
+</PreferenceScreen>

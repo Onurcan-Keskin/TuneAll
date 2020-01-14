@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/colorPrimaryLight">
+
+    <ImageButton
+        android:id="@+id/zoom_dialog_cancel"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:background="@drawable/round_selector"
+        android:tint="@color/colorWhite"
+        android:src="@drawable/ic_close" />
+
+    <View
+        android:id="@+id/zoom_view"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorBlueDark"
+        android:layout_below="@id/zoom_dialog_cancel"
+        android:layout_marginBottom="1dp"/>
+
+    <ImageView
+        android:id="@+id/zoom_dialog_imageView"
+        android:layout_below="@+id/zoom_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/def"
+        android:scaleType="fitXY"/>
+
+</RelativeLayout>

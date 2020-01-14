@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?attr/tintcolor"
+    android:orientation="vertical"
+    android:id="@+id/dialog_pa">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_margin="1dp"
+        android:background="?attr/backgroundcolor">
+
+        <EditText
+            android:id="@+id/edt_dialog_box"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/backgroundcolor"
+            android:hint="Hint"
+            android:textColorHint="?attr/textcolor"
+            android:textStyle="bold"
+            style="@style/AppTheme.Preference.Title"
+            android:textColor="?attr/tintcolor"
+            android:padding="10dp"
+            android:textSize="20sp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <androidx.cardview.widget.CardView
+
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_weight="1"
+                android:background="?android:attr/selectableItemBackground"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                app:cardBackgroundColor="@color/colorBlueFade"
+                app:cardCornerRadius="5dp">
+
+                <Button
+                    android:id="@+id/edt_dialog_negative"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/button_height_sm"
+                    android:background="@drawable/button_bg_white"
+                    android:text="@string/action_cancel" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="5dp"
+                android:layout_weight="1"
+                android:background="?android:attr/selectableItemBackground"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                app:cardBackgroundColor="@color/colorBlueFade"
+                app:cardCornerRadius="5dp">
+
+                <Button
+                    android:id="@+id/edt_dialog_positive"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/button_height_sm"
+                    android:background="@drawable/button_bg_accent"
+                    android:text="@string/action_save" />
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

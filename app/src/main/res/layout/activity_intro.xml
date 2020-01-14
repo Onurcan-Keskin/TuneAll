@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Intro_Activity"
+    android:orientation="vertical"
+    style="@style/light_theme"
+    android:background="?attr/colorPrimary">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/intro_logo"
+                android:layout_width="160dp"
+                android:layout_height="160dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="8dp"
+                android:layout_gravity="center"
+                android:src="@mipmap/icon"/>
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginTop="10dp"
+                android:textColor="?attr/tintcolor"
+                android:textStyle="bold"
+                android:textSize="24sp"
+                style="@style/AppTheme.Intro.Title"
+                android:layout_gravity="center"
+                android:text="@string/intro_title"/>
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="8dp"
+                android:textSize="16sp"
+                android:maxWidth="300dp"
+                android:textColor="?attr/textcolor"
+                android:text="@string/intro_text"
+                android:textAlignment="center"
+                android:layout_gravity="center"/>
+
+            <Button
+                android:id="@+id/intro_permission_button"
+                android:layout_width="200dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="8dp"
+                android:textColor="@color/colorWhite"
+                android:background="@drawable/sign_in_btn"
+                android:text="@string/intro_permission_button_text"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="3"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp">
+                <View
+                    android:id="@+id/vl"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:background="@color/colorBlueDark"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"/>
+                <TextView
+                    android:text="@string/language_options"
+                    android:layout_gravity="center_horizontal"
+                    android:textColor="?attr/tintcolor"
+                    android:layout_width="0dp"
+                    android:textStyle="bold"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:layout_weight="1"/>
+                <View
+                    android:id="@+id/vr"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:background="@color/colorBlueDark"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/language_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <LinearLayout
+                    android:id="@+id/lng_en"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/en"
+                            android:layout_marginTop="5dp"
+                            android:layout_width="64dp"
+                            android:layout_height="64dp"
+                            android:layout_centerHorizontal="true"
+                            android:src="@drawable/english_flag"
+                            android:tint="@color/colorBlueDark" />
+
+                        <TextView
+                            android:layout_below="@+id/en"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:text="English"
+                            android:textColor="?attr/textcolor"
+                            android:textSize="17sp" />
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/lng_tr"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/tr"
+                            android:layout_width="64dp"
+                            android:layout_height="64dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_centerHorizontal="true"
+                            android:src="@drawable/turkish_flag"
+                            android:tint="@color/colorBlueDark" />
+
+                        <TextView
+                            android:layout_below="@+id/tr"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:text="Turkish"
+                            android:textColor="?attr/textcolor"
+                            android:textSize="17sp" />
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

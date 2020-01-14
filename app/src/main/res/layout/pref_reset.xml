@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/widget_frame"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    style="@style/AppTheme.Preference.Root">
+    <com.onurcankeskin.looneytune.DesignUtils.Button
+        android:id="@+id/pref_reset_button"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:text="Reset To Default"
+        app:variant="@string/button_variant_danger"
+        app:ghost="true" />
+</LinearLayout>
